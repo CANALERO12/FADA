@@ -1,26 +1,26 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class InsertionSort {
+public class Insertion {
 
     public static int insertionSort(int[] A) {
         //int[] arr = {5, 2, 4, 6, 1, 15};
         int cnt= 0;
-        for (int i = 2; i < A.length; i++) {
+        for (int i = 2; i <= A.length; i++) {
             cnt++;
-            int key = A[i];
+            int key = A[i-1];
             cnt++;
             int j = i - 1;
             cnt+=1;
-            while (j > 0 && A[j] > key) {
+            while (j > 0 && A[j-1] > key) {
                 cnt++;// cuento la entrade del while
-                A[j + 1] = A[j];
+                A[j + 1-1] = A[j-1];
                 cnt++;
                 j--;
                 cnt++;
             }
             cnt++; //Salida del while
-            A[j + 1] = key;
+            A[j + 1-1] = key;
             cnt++; // Salida del for inicial
 
         }
@@ -48,7 +48,7 @@ public class InsertionSort {
     public static int[] ordenadoInverso(int n){
         int[] lista= new int[n];
         for(int i = n; i > 0; i--){
-            lista[n-1]= i;
+            lista[n-i]= i;
         }
         return lista;
     }
